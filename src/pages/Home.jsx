@@ -39,14 +39,14 @@ export default function Home() {
   return (
     <>
       <section className="hero wrap rise">
-        <p className="eyebrow">Escrowed Crowdfunding</p>
-        <h1>錢跟著進度走，<br />美好的事才走得遠。</h1>
+        <p className="eyebrow">台灣原創・群眾集資</p>
+        <h1>美好的事物，<br />值得如期抵達。</h1>
         <p className="lede">
-          在恆流，達標款項不會一次匯給提案者。資金存放於第三方託管專戶，
-          依公開的里程碑分段撥付；出貨之前，大部分的錢仍然是可退的。
+          恆流是台灣原創作品的集資平台。藝術、設計、出版與科技的好計畫在這裡發生；
+          每個計畫公開自己的進度，我們陪創作者走完全程，讓你安心等待作品到來。
         </p>
         <div className="hero-note">
-          每個計畫都公開它的資金流軌道：<b>實金為已撥付</b>，<b>淡金為託管中</b>
+          每個計畫都有一條公開的<b>進度軌道</b>，每一步都看得見
         </div>
       </section>
 

@@ -7,7 +7,7 @@ export default function Footer() {
         <div>
           <div className="brand" style={{ fontSize: 18 }}>恆流 <em>EverFlow</em></div>
           <p style={{ marginTop: 8, maxWidth: 340 }}>
-            錢跟著進度走的群眾集資平台。出貨之前，款項仍在第三方託管專戶，依里程碑分段撥付。
+            台灣原創群眾集資平台。達標款項存放於第三方託管專戶，依公開里程碑分段撥付，直到作品送達。
           </p>
         </div>
         <div style={{ display: 'grid', gap: 6 }}>
