@@ -40,7 +40,7 @@ export default function Dashboard() {
       <div className="panel">
         <h2>撥款進度</h2>
         <FundTrack released={split.released} escrow={split.escrow} />
-        <table className="ledger" style={{ marginTop: 20 }}>
+        <div className="table-scroll" style={{ marginTop: 20 }}><table className="ledger">
           <thead>
             <tr>
               <th>里程碑</th><th>比例</th><th>狀態</th><th>下一步</th>
@@ -60,7 +60,7 @@ export default function Dashboard() {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table></div>
         <p className="small muted" style={{ marginTop: 14 }}>
           進度證明需可驗證（如視訊驗機、供應商單據、物流單號）。審核通過後三個工作日內撥付。
         </p>

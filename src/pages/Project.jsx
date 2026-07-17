@@ -125,6 +125,16 @@ export default function Project() {
           </div>
         </aside>
       </div>
+
+      {p.status !== 'completed' && (
+        <div className="mobile-cta">
+          <div>
+            <span className="small muted">已募得</span>
+            <div className="amt">{fmt(p.raised)}</div>
+          </div>
+          <Link to={`/project/${p.slug}/back`} className="btn gold">贊助這個計畫</Link>
+        </div>
+      )}
     </>
   )
 }
