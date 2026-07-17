@@ -108,12 +108,20 @@ export default function Project() {
                 </Link>
               ))}
             </div>
-            <Link to={`/project/${p.slug}/back`} className="btn gold block" style={{ marginTop: 18 }}>
-              贊助這個計畫
-            </Link>
-            <p className="small muted" style={{ marginTop: 12 }}>
-              集資期間可隨時取消贊助，全額原路退回。
-            </p>
+            {p.status === 'completed' ? (
+              <div className="notice ok" style={{ marginTop: 18 }}>
+                本計畫已走完全程並如期送達，頁面與進度紀錄永久公開。
+              </div>
+            ) : (
+              <>
+                <Link to={`/project/${p.slug}/back`} className="btn gold block" style={{ marginTop: 18 }}>
+                  贊助這個計畫
+                </Link>
+                <p className="small muted" style={{ marginTop: 12 }}>
+                  集資期間可隨時取消贊助，全額原路退回。
+                </p>
+              </>
+            )}
           </div>
         </aside>
       </div>

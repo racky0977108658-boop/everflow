@@ -20,7 +20,7 @@ export default function ProjectCard({ p }) {
         </div>
         <div className="facts">
           <span className="amt">{fmt(p.raised)}</span>
-          <span>{pctOfGoal}% 達成・{p.backers} 人贊助・剩 {p.days_left} 天</span>
+          <span>{p.status === 'completed' ? `${pctOfGoal}% 達成・${p.backers} 人贊助` : `${pctOfGoal}% 達成・${p.backers} 人贊助・剩 ${p.days_left} 天`}</span>
         </div>
         <FundTrack released={split.released} escrow={split.escrow} />
       </div>
