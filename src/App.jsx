@@ -7,6 +7,8 @@ import Checkout from './pages/Checkout.jsx'
 import Auth from './pages/Auth.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import Legal from './pages/Legal.jsx'
+import Start from './pages/Start.jsx'
+import Admin from './pages/Admin.jsx'
 
 export default function App() {
   return (
@@ -20,6 +22,8 @@ export default function App() {
           <Route path="/auth" element={<Auth />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/legal" element={<Legal />} />
+          <Route path="/start" element={<Start />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </main>
       <Footer />

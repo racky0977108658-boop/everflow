@@ -4,12 +4,14 @@ import { supabase } from '../lib/supabase.js'
 
 const LINKS = [
   { to: '/', label: '探索計畫' },
+  { to: '/start', label: '發起計畫' },
   { to: '/dashboard', label: '提案者後台' },
   { to: '/legal', label: '保障規則' },
 ]
 
 export default function Header() {
   const [user, setUser] = useState(null)
+  const [isAdmin, setIsAdmin] = useState(false)
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
@@ -21,6 +23,12 @@ export default function Header() {
     return () => sub?.subscription?.unsubscribe()
   }, [])
 
+  useEffect(() => {
+    if (!supabase || !user) { setIsAdmin(false); return }
+    supabase.from('ef_admins').select('user_id').eq('user_id', user.id).maybeSingle()
+      .then(({ data }) => setIsAdmin(Boolean(data)))
+  }, [user])
+
   return (
     <header className="site-header">
       <div className="wrap">
@@ -28,6 +36,7 @@ export default function Header() {
         <nav className="nav">
           <div className="nav-links">
             {LINKS.map((l) => <Link key={l.to} to={l.to}>{l.label}</Link>)}
+            {isAdmin && <Link to="/admin" style={{ color: 'var(--gold)' }}>審核後台</Link>}
           </div>
           {user ? (
             <button className="btn ghost compact" onClick={() => supabase.auth.signOut()}>登出</button>
@@ -49,6 +58,7 @@ export default function Header() {
           {LINKS.map((l) => (
             <Link key={l.to} to={l.to} role="menuitem" onClick={() => setOpen(false)}>{l.label}</Link>
           ))}
+          {isAdmin && <Link to="/admin" role="menuitem" style={{ color: 'var(--gold)' }} onClick={() => setOpen(false)}>審核後台</Link>}
         </div>
       )}
     </header>

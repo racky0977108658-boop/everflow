@@ -79,10 +79,21 @@ export default function Checkout() {
         ))}
 
         <div className="field" style={{ marginTop: 20 }}>
-          <label htmlFor="qty">數量</label>
-          <select id="qty" value={qty} onChange={(e) => setQty(Number(e.target.value))}>
-            {[1, 2, 3, 4, 5].map((n) => <option key={n} value={n}>{n}</option>)}
-          </select>
+          <label htmlFor="qty">數量{tier?.limit ? `（此方案限量 ${tier.limit} 份）` : ''}</label>
+          <div className="qty-row">
+            <button type="button" className="qty-btn" aria-label="減少數量"
+              onClick={() => setQty((n) => Math.max(1, n - 1))}>−</button>
+            <input
+              id="qty" type="number" inputMode="numeric" min="1" max={tier?.limit ?? 999}
+              value={qty}
+              onChange={(e) => {
+                const n = parseInt(e.target.value, 10)
+                setQty(Number.isFinite(n) ? Math.min(Math.max(1, n), tier?.limit ?? 999) : 1)
+              }}
+            />
+            <button type="button" className="qty-btn" aria-label="增加數量"
+              onClick={() => setQty((n) => Math.min(n + 1, tier?.limit ?? 999))}>＋</button>
+          </div>
         </div>
         <div className="field">
           <label htmlFor="email">電子信箱（付款與退款通知）</label>

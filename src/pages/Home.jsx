@@ -191,7 +191,7 @@ export default function Home() {
                   結案之後，作品還能透過恆域藝創走進寄售與拍賣通路。
                 </p>
               </div>
-              <Link to="/dashboard" className="btn gold">發起你的計畫</Link>
+              <Link to="/start" className="btn gold">發起你的計畫</Link>
             </div>
           </section>
         </>

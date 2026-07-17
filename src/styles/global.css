@@ -307,3 +307,21 @@ table.ledger { width: 100%; border-collapse: collapse; font-size: 13px; }
   .panel { padding: 18px; }
   .cta-panel .btn { width: 100%; text-align: center; }
 }
+
+/* ---------- 修正與數量輸入 ---------- */
+/* iOS Safari 按鈕預設藍字修正 */
+button { color: inherit; -webkit-appearance: none; appearance: none; border-radius: 0; }
+/* 導覽連結間距（先前遺漏） */
+.nav-links { display: flex; gap: 22px; align-items: center; }
+
+.qty-row { display: flex; align-items: stretch; gap: 0; max-width: 220px; }
+.qty-btn {
+  width: 48px; border: 1px solid var(--line); background: var(--paper-raise);
+  font-size: 18px; color: var(--ink);
+}
+.qty-row input {
+  width: 100%; text-align: center; border: 1px solid var(--line); border-left: 0; border-right: 0;
+  background: var(--paper-raise); padding: 11px 0; font-family: var(--font-mono); font-size: 15px; color: var(--ink);
+}
+.qty-row input:focus { outline: none; border-color: var(--gold); }
+.qty-row input::-webkit-inner-spin-button, .qty-row input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
