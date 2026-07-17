@@ -14,7 +14,7 @@ export default function Auth() {
     setState({ busy: true, msg: null, err: null })
     const { error } = await supabase.auth.signInWithOtp({
       email,
-      options: { emailRedirectTo: window.location.origin },
+      options: { emailRedirectTo: window.location.origin + import.meta.env.BASE_URL },
     })
     setState(error
       ? { busy: false, msg: null, err: '寄送失敗，請確認信箱是否正確後再試一次。' }
@@ -28,7 +28,7 @@ export default function Auth() {
     }
     await supabase.auth.signInWithOAuth({
       provider: 'google',
-      options: { redirectTo: window.location.origin },
+      options: { redirectTo: window.location.origin + import.meta.env.BASE_URL },
     })
   }
 
