@@ -1,5 +1,32 @@
 # 恆流 EverFlow
 
+> 分類：**獨立產品** · 文件整理：2026-10-02
+
+群眾集資平台，包含前台、管理介面及金流整合程式。
+
+| 項目 | 說明 |
+|---|---|
+| 維護狀態 | 開發／示範；本次未驗證正式營運 |
+| 新案使用 | 獨立產品維護，不作為 NOX 3D 網站模板。 |
+| 共用技術與 Skill | [NOX 技術庫](https://github.com/racky0977108658-boop/nox-assets) |
+| 倉庫分類總覽 | [GitHub 結構檢查](https://github.com/racky0977108658-boop/nox-assets/blob/main/docs/audits/GITHUB-REPOSITORY-AUDIT-2026-10-02.md) |
+
+## 主要檔案
+
+| 路徑 | 用途 |
+|---|---|
+| [src/](src/) | 前端原始程式 |
+| [netlify/functions/](netlify/functions/) | 伺服器函式 |
+| [supabase/schema.sql](supabase/schema.sql) | 資料庫結構 |
+| [package.json](package.json) | 依賴與執行指令 |
+| [netlify.toml](netlify.toml) | 部署設定 |
+
+## 維護說明
+
+安裝、部署與功能說明保留於下方。 本次只整理文件與用途標示；執行結果、正式部署位置與實機效能須另外驗證。類別標示不代表已封存或停用網站。
+
+## 原有專案說明
+
 錢跟著進度走的群眾集資平台。分段撥款、資金流向公開、退款一律原路退回。
 
 ## 架構
